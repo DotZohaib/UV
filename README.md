@@ -134,6 +134,36 @@ uv add google-generativeai
 GEMINI_API_KEY=your-gemini-key-here
 ```
 
+### 4. Create `main.py`
+
+```python
+import os
+import google.generativeai as genai
+from dotenv import load_dotenv
+
+# This is the main part of the code that runs
+if __name__ == "__main__":
+    # 1. Load your API key from the .env file
+    load_dotenv()
+    my_api_key = os.getenv("GEMINI_API_KEY")
+
+    # 2. Set up the Gemini library with your key
+    genai.configure(api_key=my_api_key)
+
+    # 3. Choose a Gemini model (gemini-1.5-flash is fast)
+    model = genai.GenerativeModel('gemini-1.5-flash-latest')
+
+    # 4. Ask the user for a question
+    user_question = input("Ask Gemini a question: ")
+
+    # 5. Send the question to the model and get a response
+    response = model.generate_content(user_question)
+
+    # 6. Print the model's answer
+    print("\nGemini says:")
+    print(response.text)
+```
+
 3. Use the appropriate Gemini client in your `main.py`.
 
 ---
