@@ -1,4 +1,4 @@
-# Hello Agent Project
+# DotZohaib  AI Agent
 
 A simple AI agent project using Python, environment variables, and the OpenAI API. This project also uses [**uv**](https://github.com/astral-sh/uv) — a next-generation Python package manager that is **faster** and **more reliable** than pip.
 
